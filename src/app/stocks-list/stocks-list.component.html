@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Symbol</th>
+      <th>Name</th>
+      <th>BasePrice</th>
+      <th>Price</th>
+      <th>Bid Price</th>
+      <th>Bid Size</th>
+      <th>Ask Price</th>
+      <th>Ask Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let stock of (marketData$ | async)">
+      <td><button (click)="removeStock(stock.Symbol)">X</button></td>
+      <td>{{stock.Symbol}}</td>
+      <td>{{stock.Name}}</td>
+      <td>{{stock.BasePrice}}</td>
+      <td>{{stock.LastPrice}}</td>
+      <td>{{stock.Bid}}</td>
+      <td>{{stock.BidSize}}</td>
+      <td>{{stock.Ask}}</td>
+      <td>{{stock.AskSize}}</td>
+    </tr>
+  </tbody>
+</table>

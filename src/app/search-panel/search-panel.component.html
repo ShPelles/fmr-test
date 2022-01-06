@@ -1,0 +1,7 @@
+<label for="search">Search: </label>
+<input id="search" type="text" [formControl]="searchInput">
+
+<div class="result-stock" *ngFor="let stock of searchResult$ | async" (click)="addStock(stock)">
+  <div>{{stock.Symbol}}</div>
+  <span>{{stock.Name}}</span>
+</div>
